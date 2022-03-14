@@ -42,7 +42,7 @@ namespace blocdenotas
             xd.Show();
             
         }
-        string directory = @"C:\\Users\\BitZ\\Desktop";
+         public string directory = @"C:\\Users\\BitZ\\Desktop";
 
         public TreeNode ReadFiles(DirectoryInfo directoryInfo)
         {
@@ -59,25 +59,27 @@ namespace blocdenotas
             return treeNode;
         }
 
+        
 
     private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "Documento de texto| *.txt";
             openFileDialog1.Title = "Abrir...";
             openFileDialog1.FileName = "Sin tulo 1";
-         
+            FormNew frmrich = new FormNew();
+            Form1 ayuda = new Form1();
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string strfilename = openFileDialog1.FileName;
                 string filetext = File.ReadAllText(strfilename);
-                FormNew frmrich = new FormNew();
+                
                 //StreamReader leer = new StreamReader(openFileDialog1.FileName);
                 frmrich.richTextBox1.Text = filetext;
-                    frmrich.Show();
-              
-                    //leer.Close();
+                Hide();
+                frmrich.Show();
+            }
+            
 
-                }
         }
 
         private void Button1_Click_1(object sender, EventArgs e)
@@ -89,12 +91,22 @@ namespace blocdenotas
             StreamReader owo = new StreamReader(directoryxd);
             xdxd.richTextBox1.Text = owo.ReadToEnd();
             xdxd.Show();
-           
+            //Hide();
         }
 
         private void EXITToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void TreeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
