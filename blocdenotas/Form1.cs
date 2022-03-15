@@ -59,27 +59,30 @@ namespace blocdenotas
             return treeNode;
         }
 
-        
-
+       public string DirectoryOpen = string.Empty;
+        public string DirectoryName = string.Empty;
     private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "Documento de texto| *.txt";
             openFileDialog1.Title = "Abrir...";
             openFileDialog1.FileName = "Sin tulo 1";
+
             FormNew frmrich = new FormNew();
             Form1 ayuda = new Form1();
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string strfilename = openFileDialog1.FileName;
                 string filetext = File.ReadAllText(strfilename);
-                
+                DirectoryName = openFileDialog1.SafeFileName;
                 //StreamReader leer = new StreamReader(openFileDialog1.FileName);
                 frmrich.richTextBox1.Text = filetext;
+                DirectoryOpen = strfilename;
+                DirectoryName = filetext;
                 Hide();
                 frmrich.Show();
             }
-            
 
+            
         }
 
         private void Button1_Click_1(object sender, EventArgs e)
@@ -107,6 +110,11 @@ namespace blocdenotas
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void OpenFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }

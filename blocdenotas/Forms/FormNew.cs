@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace blocdenotas.Forms
 {
-    public partial class FormNew : Form 
+    public partial class FormNew : Form
     {
         
         //Form1 sandia = new Form1();
@@ -22,7 +22,8 @@ namespace blocdenotas.Forms
         {
             InitializeComponent();
         }
-
+        
+        
         private void Button1_Click(object sender, EventArgs e)
         {
             
@@ -41,18 +42,20 @@ namespace blocdenotas.Forms
                 guardado.Close();
             }
             DirectoryInfo directoryInfo = new DirectoryInfo(directory);
-            qwq.treeView1.Nodes.Clear();
-            qwq.treeView1.Nodes.Add(qwq.ReadFiles(directoryInfo));
-            //qwq.Show();
-            Close();
-        }
 
+            qwq.Show();
+            Hide();
+        }
+        
+        
         private void FormNew_Load(object sender, EventArgs e)
         {
-
+            string deaxd = qwq.DirectoryOpen;
         }
-
+        
         bool changes;
+        private string xdxdd;
+
         private void FormNew_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult res = MessageBox.Show("Si cierra esta ventana perdera sus datos \n ¿Esta seguro que desea salir?", "",
@@ -72,8 +75,7 @@ namespace blocdenotas.Forms
                 qwq.Show();
             }
             
-            
-
+           
             //if (changes == true) {
             //    DialogResult res = MessageBox.Show("Si cierra esta ventana perdera sus datos \n ¿Esta seguro que desea salir?","",
             //        MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
@@ -82,7 +84,7 @@ namespace blocdenotas.Forms
             //    }
             //}
         }
-
+        
         private void FormNew_FormClosed(object sender, FormClosedEventArgs e)
         {
             //DialogResult res = MessageBox.Show("Si cierra esta ventana perdera sus datos \n ¿Esta seguro que desea salir?", "",
@@ -97,6 +99,20 @@ namespace blocdenotas.Forms
             //    Close();
             //}
         }
+        
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            StreamWriter guardadoxd = new StreamWriter(qwq.openFileDialog1.FileName);
+            foreach (object linea in richTextBox1.Lines)
+            {
+                guardadoxd.WriteLine(linea);
+            }
+            guardadoxd.Close();
+            Hide();
+            qwq.Show();
+            //File.WriteAllText(qwq.openFileDialog1.FileName , richTextBox1.Text);
+        }
     }
 }
 //PROFESOR NO SE ME CIERRA EL PROGRAMA ME QUIERO TIRAR DE UN PUENTE AYUDA
+//Hice lo que pude, ni modo
