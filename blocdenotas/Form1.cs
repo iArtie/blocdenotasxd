@@ -1,4 +1,5 @@
 ﻿using blocdenotas.Forms;
+using Infraestructura.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,8 @@ namespace blocdenotas
 {
     public partial class Form1 : Form 
     {
-        
+
+        IRepository papaya = new IRepository();
         public Form1()
         {
             InitializeComponent();
@@ -30,8 +32,8 @@ namespace blocdenotas
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            DirectoryInfo directoryInfo = new DirectoryInfo(directory);
-            treeView1.Nodes.Add(ReadFiles(directoryInfo));
+            DirectoryInfo directoryInfo = new DirectoryInfo(papaya.directory);
+            treeView1.Nodes.Add(papaya.ReadFiles(directoryInfo));
             
         }
 
@@ -42,24 +44,9 @@ namespace blocdenotas
             xd.Show();
             Hide();
         }
-        //public string directory =  @"C:\\Users\\\JADPA23\\Desktop";
-        public string directory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)); /*"xd"*/
-        public TreeNode ReadFiles(DirectoryInfo directoryInfo)
-        {
+        
 
-            TreeNode treeNode = new TreeNode(directoryInfo.Name);
-            foreach (var item in directoryInfo.GetDirectories())
-            {
-                treeNode.Nodes.Add(ReadFiles(item));
-            }
-            foreach (var item in directoryInfo.GetFiles())
-            {
-                treeNode.Nodes.Add(new TreeNode(item.Name));
-            }
-            return treeNode;
-        }
-
-       public string DirectoryOpen = string.Empty;
+       
         public string DirectoryName = string.Empty;
     private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -76,7 +63,7 @@ namespace blocdenotas
                 DirectoryName = openFileDialog1.SafeFileName;
                 //StreamReader leer = new StreamReader(openFileDialog1.FileName);
                 frmrich.richTextBox1.Text = filetext;
-                DirectoryOpen = strfilename;
+                
                 DirectoryName = filetext;
                 Hide();
                 frmrich.Show();
@@ -85,7 +72,7 @@ namespace blocdenotas
             
         }
 
-        private void Button1_Click_1(object sender, EventArgs e)
+        public void Button1_Click_1(object sender, EventArgs e)
         {
         
             FormNew xdxd = new FormNew();

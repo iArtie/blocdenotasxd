@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Infraestructura.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +13,10 @@ namespace blocdenotas.Forms
 {
     public partial class FormNew : Form
     {
-        
-        //Form1 sandia = new Form1();
-        string directory = @"C:\\Users\\BitZ\\Desktop";
+
+
+        IRepository uwu = new IRepository();
         Form1 qwq = new Form1();
-        string Files = Application.StartupPath + @"\Contenedor";
-        string Archive = @"ArchivoTexto.txt";
         public FormNew()
         {
             InitializeComponent();
@@ -41,7 +40,7 @@ namespace blocdenotas.Forms
                 }
                 guardado.Close();
             }
-            DirectoryInfo directoryInfo = new DirectoryInfo(directory);
+            DirectoryInfo directoryInfo = new DirectoryInfo(uwu.directory);
 
             qwq.Show();
             Hide();
@@ -50,12 +49,9 @@ namespace blocdenotas.Forms
         
         private void FormNew_Load(object sender, EventArgs e)
         {
-            string deaxd = qwq.DirectoryOpen;
+            
         }
         
-        bool changes;
-        private string xdxdd;
-
         private void FormNew_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult res = MessageBox.Show("Si cierra esta ventana perdera sus datos \n ¿Esta seguro que desea salir?", "",
@@ -63,10 +59,7 @@ namespace blocdenotas.Forms
             if (res == DialogResult.Cancel)
             {
                 e.Cancel = true;
-                //qwq.Hide();
-                //qwq.Show();
-                
-                
+                 
             }
             if(res == DialogResult.OK)
             {
@@ -102,7 +95,7 @@ namespace blocdenotas.Forms
         
         private void Button2_Click(object sender, EventArgs e)
         {
-            StreamWriter guardadoxd = new StreamWriter(qwq.openFileDialog1.FileName);
+            StreamWriter guardadoxd = new StreamWriter(uwu.directory);
             foreach (object linea in richTextBox1.Lines)
             {
                 guardadoxd.WriteLine(linea);
@@ -112,7 +105,12 @@ namespace blocdenotas.Forms
             qwq.Show();
             //File.WriteAllText(qwq.openFileDialog1.FileName , richTextBox1.Text);
         }
+
+        private void RichTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 //PROFESOR NO SE ME CIERRA EL PROGRAMA ME QUIERO TIRAR DE UN PUENTE AYUDA
-//XDXDXD
+//Ayuda esto no es un meme

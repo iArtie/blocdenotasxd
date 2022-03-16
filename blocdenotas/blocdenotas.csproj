@@ -88,5 +88,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Infraestructura\Infraestructura.csproj">
+      <Project>{C2E0FF6D-D48C-48D4-A4B4-D90DBCB3A5A7}</Project>
+      <Name>Infraestructura</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
