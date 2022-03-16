@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blocdenotas", "blocdenotas\blocdenotas.csproj", "{831241C4-EECB-4068-9B27-CC7AAA539AE6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F8633C2D-6080-45E4-87F9-A682F2C9E6B5} = {F8633C2D-6080-45E4-87F9-A682F2C9E6B5}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infraestructura", "Infraestructura\Infraestructura.csproj", "{C2E0FF6D-D48C-48D4-A4B4-D90DBCB3A5A7}"
 EndProject

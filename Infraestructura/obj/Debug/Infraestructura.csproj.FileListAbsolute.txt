@@ -1,0 +1,8 @@
+C:\Users\JADPA12\Desktop\blocdenotasxd-master\Infraestructura\obj\Debug\Infraestructura.Properties.Resources.resources
+C:\Users\JADPA12\Desktop\blocdenotasxd-master\Infraestructura\obj\Debug\Infraestructura.csproj.GenerateResource.cache
+C:\Users\JADPA12\Desktop\blocdenotasxd-master\Infraestructura\obj\Debug\Infraestructura.csproj.CoreCompileInputs.cache
+C:\Users\JADPA12\Desktop\blocdenotasxd-master\Infraestructura\bin\Debug\Infraestructura.dll.config
+C:\Users\JADPA12\Desktop\blocdenotasxd-master\Infraestructura\bin\Debug\Infraestructura.dll
+C:\Users\JADPA12\Desktop\blocdenotasxd-master\Infraestructura\bin\Debug\Infraestructura.pdb
+C:\Users\JADPA12\Desktop\blocdenotasxd-master\Infraestructura\obj\Debug\Infraestructura.dll
+C:\Users\JADPA12\Desktop\blocdenotasxd-master\Infraestructura\obj\Debug\Infraestructura.pdb

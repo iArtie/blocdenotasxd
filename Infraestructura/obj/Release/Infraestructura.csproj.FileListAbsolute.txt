@@ -1,0 +1,3 @@
+C:\Users\JADPA12\Desktop\blocdenotasxd-master\Infraestructura\obj\Release\Infraestructura.Properties.Resources.resources
+C:\Users\JADPA12\Desktop\blocdenotasxd-master\Infraestructura\obj\Release\Infraestructura.csproj.GenerateResource.cache
+C:\Users\JADPA12\Desktop\blocdenotasxd-master\Infraestructura\obj\Release\Infraestructura.csproj.CoreCompileInputs.cache
