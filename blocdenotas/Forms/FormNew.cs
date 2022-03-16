@@ -115,4 +115,3 @@ namespace blocdenotas.Forms
     }
 }
 //PROFESOR NO SE ME CIERRA EL PROGRAMA ME QUIERO TIRAR DE UN PUENTE AYUDA
-//Hice lo que pude, ni modo

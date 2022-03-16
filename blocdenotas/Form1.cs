@@ -40,10 +40,10 @@ namespace blocdenotas
            
             FormNew xd = new FormNew();
             xd.Show();
-            
+            Hide();
         }
-         public string directory = @"C:\\Users\\BitZ\\Desktop";
-
+        //public string directory =  @"C:\\Users\\\JADPA23\\Desktop";
+        public string directory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)); /*"xd"*/
         public TreeNode ReadFiles(DirectoryInfo directoryInfo)
         {
 
@@ -89,12 +89,12 @@ namespace blocdenotas
         {
         
             FormNew xdxd = new FormNew();
-            string directoryxd = "C:\\Users\\BitZ\\" + treeView1.SelectedNode.FullPath;
+            string directoryxd = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), treeView1.SelectedNode.FullPath);
 
             StreamReader owo = new StreamReader(directoryxd);
             xdxd.richTextBox1.Text = owo.ReadToEnd();
             xdxd.Show();
-            //Hide();
+            Hide();
         }
 
         private void EXITToolStripMenuItem_Click(object sender, EventArgs e)
@@ -113,6 +113,11 @@ namespace blocdenotas
         }
 
         private void OpenFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
